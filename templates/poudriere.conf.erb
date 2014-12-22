@@ -1,0 +1,149 @@
+# Managed Puppet
+#
+<% if defined? @NO_ZFS -%>
+NO_ZFS=<%= @NO_ZFS %>
+<% end -%>
+<% if defined? @ZPOOL -%>
+ZPOOL=<%= @ZPOOL %>
+<% end -%>
+<% if defined? @ZROOTFS -%>
+ZROOTFS=<%= @ZROOTFS %>
+<% end -%>
+<% if defined? @FREEBSD_HOST -%>
+FREEBSD_HOST=<%= @FREEBSD_HOST %>
+<% end -%>
+<% if defined? @RESOLV_CONF -%>
+RESOLV_CONF=<%= @RESOLV_CONF %>
+<% end -%>
+<% if defined? @BASEFS -%>
+BASEFS=<%= @BASEFS %>
+<% end -%>
+<% if defined? @POUDRIERE_DATA -%>
+POUDRIERE_DATA=<%= @POUDRIERE_DATA %>
+<% end -%>
+<% if defined? @USE_PORTLINT -%>
+USE_PORTLINT=<%= @USE_PORTLINT %>
+<% end -%>
+<% if defined? @MFSSIZE -%>
+MFSSIZE=<%= @MFSSIZE %>
+<% end -%>
+<% if defined? @USE_TMPFS -%>
+USE_TMPFS=<%= @USE_TMPFS %>
+<% end -%>
+<% if defined? @TMPFS_LIMIT -%>
+TMPFS_LIMIT=<%= @TMPFS_LIMIT %>
+<% end -%>
+<% if defined? @MAX_MEMORY -%>
+MAX_MEMORY=<%= @MAX_MEMORY %>
+<% end -%>
+<% if defined? @DISTFILES_CACHE -%>
+DISTFILES_CACHE=<%= @DISTFILES_CACHE %>
+<% end -%>
+<% if defined? @CSUP_HOST -%>
+CSUP_HOST=<%= @CSUP_HOST %>
+<% end -%>
+<% if defined? @SVN_HOST -%>
+SVN_HOST=<%= @SVN_HOST %>
+<% end -%>
+<% if defined? @CHECK_CHANGED_OPTIONS -%>
+CHECK_CHANGED_OPTIONS=<%= @CHECK_CHANGED_OPTIONS %>
+<% end -%>
+<% if defined? @CHECK_CHANGED_DEPS -%>
+CHECK_CHANGED_DEPS=<%= @CHECK_CHANGED_DEPS %>
+<% end -%>
+<% if defined? @PKG_REPO_SIGNING_KEY -%>
+PKG_REPO_SIGNING_KEY=<%= @PKG_REPO_SIGNING_KEY %>
+<% end -%>
+<% if defined? @CCACHE_DIR -%>
+CCACHE_DIR=<%= @CCACHE_DIR %>
+<% end -%>
+<% if defined? @PARALLEL_JOBS -%>
+PARALLEL_JOBS=<%= @PARALLEL_JOBS %>
+<% end -%>
+<% if defined? @PREPARE_PARALLEL_JOBS -%>
+PREPARE_PARALLEL_JOBS=<%= @PREPARE_PARALLEL_JOBS %>
+<% end -%>
+<% if defined? @SAVE_WRKDIR -%>
+SAVE_WRKDIR=<%= @SAVE_WRKDIR %>
+<% end -%>
+<% if defined? @WRKDIR_ARCHIVE_FORMAT -%>
+WRKDIR_ARCHIVE_FORMAT=<%= @WRKDIR_ARCHIVE_FORMAT %>
+<% end -%>
+<% if defined? @NOLINUX -%>
+NOLINUX=<%= @NOLINUX %>
+<% end -%>
+<% if defined? @NO_FORCE_PACKAGE -%>
+NO_FORCE_PACKAGE=<%= @NO_FORCE_PACKAGE %>
+<% end -%>
+<% if defined? @NO_PACKAGE_BUILDING -%>
+NO_PACKAGE_BUILDING=<%= @NO_PACKAGE_BUILDING %>
+<% end -%>
+<% if defined? @HTTP_PROXY -%>
+export HTTP_PROXY=<%= @HTTP_PROXY %>
+<% end -%>
+<% if defined? @HTTPS_PROXY -%>
+export HTTPS_PROXY=<%= @HTTPS_PROXY %>
+<% end -%>
+<% if defined? @FTP_PROXY -%>
+export FTP_PROXY=<%= @FTP_PROXY %>
+<% end -%>
+<% if defined? @NO_RESTRICTED -%>
+NO_RESTRICTED=<%= @NO_RESTRICTED %>
+<% end -%>
+<% if defined? @ALLOW_MAKE_JOBS -%>
+ALLOW_MAKE_JOBS=<%= @ALLOW_MAKE_JOBS %>
+<% end -%>
+<% if defined? @ALLOW_MAKE_JOBS_PACKAGES -%>
+ALLOW_MAKE_JOBS_PACKAGES=<%= @ALLOW_MAKE_JOBS_PACKAGES %>
+<% end -%>
+<% if defined? @TIMESTAMP_LOGS -%>
+TIMESTAMP_LOGS=<%= @TIMESTAMP_LOGS %>
+<% end -%>
+<% if defined? @URL_BASE -%>
+URL_BASE=<%= @URL_BASE %>
+<% end -%>
+<% if defined? @MAX_EXECUTION_TIME -%>
+MAX_EXECUTION_TIME=<%= @MAX_EXECUTION_TIME %>
+<% end -%>
+<% if defined? @NOHANG_TIME -%>
+NOHANG_TIME=<%= @NOHANG_TIME %>
+<% end -%>
+<% if defined? @ATOMIC_PACKAGE_REPOSITORY -%>
+ATOMIC_PACKAGE_REPOSITORY=<%= @ATOMIC_PACKAGE_REPOSITORY %>
+<% end -%>
+<% if defined? @COMMIT_PACKAGES_ON_FAILURE -%>
+COMMIT_PACKAGES_ON_FAILURE=<%= @COMMIT_PACKAGES_ON_FAILURE %>
+<% end -%>
+<% if defined? @KEEP_OLD_PACKAGES -%>
+KEEP_OLD_PACKAGES=<%= @KEEP_OLD_PACKAGES %>
+<% end -%>
+<% if defined? @KEEP_OLD_PACKAGES_COUNT -%>
+KEEP_OLD_PACKAGES_COUNT=<%= @KEEP_OLD_PACKAGES_COUNT %>
+<% end -%>
+<% if defined? @PORTTESTING_FATAL -%>
+PORTTESTING_FATAL=<%= @PORTTESTING_FATAL %>
+<% end -%>
+<% if defined? @BUILDER_HOSTNAME -%>
+BUILDER_HOSTNAME=<%= @BUILDER_HOSTNAME %>
+<% end -%>
+<% if defined? @PRESERVE_TIMESTAMP -%>
+PRESERVE_TIMESTAMP=<%= @PRESERVE_TIMESTAMP %>
+<% end -%>
+<% if defined? @BUILD_AS_NON_ROOT -%>
+BUILD_AS_NON_ROOT=<%= @BUILD_AS_NON_ROOT %>
+<% end -%>
+<% if defined? @PRIORITY_BOOST -%>
+PRIORITY_BOOST=<%= @PRIORITY_BOOST %>
+<% end -%>
+<% if defined? @BUILDNAME_FORMAT -%>
+BUILDNAME_FORMAT=<%= @BUILDNAME_FORMAT %>
+<% end -%>
+<% if defined? @DURATION_FORMAT -%>
+DURATION_FORMAT=<%= @DURATION_FORMAT %>
+<% end -%>
+<% if defined? @USE_COLORS -%>
+USE_COLORS=<%= @USE_COLORS %>
+<% end -%>
+<% if defined? @TRIM_ORPHANED_BUILD_DEPS -%>
+TRIM_ORPHANED_BUILD_DEPS=<%= @TRIM_ORPHANED_BUILD_DEPS %>
+<% end -%>
