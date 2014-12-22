@@ -92,4 +92,14 @@ class freebsd_poudriere::config {
     ],
   }
 
+  #
+  # ports tree create
+  #
+  create_resources(freebsd_poudriere::ports, $freebsd_poudriere::ports)
+
+  #
+  # jails create
+  #
+  create_resources(freebsd_poudriere::jails, $freebsd_poudriere::jails)
+
 }

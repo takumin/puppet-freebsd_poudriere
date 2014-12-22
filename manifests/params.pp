@@ -14,14 +14,20 @@ class freebsd_poudriere::params {
       $config                     = "$prefix/etc/poudriere.conf"
       $config_template            = 'poudriere/poudriere.conf.erb'
 
+      # jail
+      $jails                      = {}
+
+      # ports
+      $ports                      = {}
+
       # poudriere configuration
       $NO_ZFS                     = undef
       $ZPOOL                      = undef
-      $ZROOTFS                    = undef
-      $FREEBSD_HOST               = undef
-      $RESOLV_CONF                = undef
-      $BASEFS                     = undef
-      $POUDRIERE_DATA             = undef
+      $ZROOTFS                    = undef # default: /poudriere
+      $FREEBSD_HOST               = undef # default: ftp://ftp.freebsd.org
+      $RESOLV_CONF                = '/etc/resolv.conf'
+      $BASEFS                     = "$prefix/poudriere"
+      $POUDRIERE_DATA             = undef # default: ${BASEFS}/data
       $USE_PORTLINT               = undef
       $MFSSIZE                    = undef
       $USE_TMPFS                  = undef
