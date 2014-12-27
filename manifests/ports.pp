@@ -13,12 +13,6 @@ define freebsd_poudriere::ports (
   if $ensure == present {
     if $portshaker == true {
       $args = "-c -p ${name} -F -f none -M ${freebsd_poudriere::BASEFS}/ports/default"
-
-      Exec["poudriere ports: ${name}"] {
-        require +> [
-          freebsd_portshaker::target[$name],
-        ],
-      }
     } else {
       if $filesystem {
         $_filesystem = "-f ${filesystem}"
@@ -46,6 +40,16 @@ define freebsd_poudriere::ports (
         File[$freebsd_poudriere::config],
       ],
       unless  => "poudriere ports -qln | grep -qw '^${name}'",
+    }
+
+    if $portshaker == true {
+      include freebsd_portshaker
+
+      Exec["poudriere ports: ${name}"] {
+        require +> [
+          freebsd_portshaker::target[$name],
+        ],
+      }
     }
   }
 }

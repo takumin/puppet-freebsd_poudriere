@@ -32,12 +32,6 @@ define freebsd_poudriere::jails (
     }
     if $portstree {
       $_portstree = "-p ${portstree}"
-
-      Exec["poudriere jail: ${name}"] {
-        require +> [
-          freebsd_poudriere::ports[$portstree],
-        ],
-      }
     }
     if $patch {
       $_patch = "-P ${patch}"
@@ -62,6 +56,14 @@ define freebsd_poudriere::jails (
       ],
       timeout => 3600,
       unless  => "poudriere jail -qln | grep -qw '^${name}'",
+    }
+
+    if $portstree {
+      Exec["poudriere jail: ${name}"] {
+        require +> [
+          freebsd_poudriere::ports[$portstree],
+        ],
+      }
     }
   }
 }
