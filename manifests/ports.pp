@@ -3,11 +3,11 @@
 # This define is called from freebsd_poudriere for ports create.
 #
 define freebsd_poudriere::ports (
-  $ensure = present,
-  $filesystem,
-  $mountpoint,
-  $method,
-  $branch,
+  $ensure     = present,
+  $filesystem = undef,
+  $mountpoint = undef,
+  $method     = undef,
+  $branch     = undef,
   $portshaker = false,
 ) {
   if $ensure == present {
@@ -20,7 +20,20 @@ define freebsd_poudriere::ports (
         ],
       }
     } else {
-      $args = "-c -p ${name} -f ${filesystem} -M ${mountpoint} -m ${method} -B ${branch}"
+      if $filesystem {
+        $_filesystem = "-f ${filesystem}"
+      }
+      if $mountpoint {
+        $_mountpoint = "-M ${mountpoint}"
+      }
+      if $method {
+        $_method = "-m ${method}"
+      }
+      if $branch {
+        $_branch = "-B ${branch}"
+      }
+
+      $args = "-c -p ${name} ${_filesystem} ${_mountpoint} ${_method} ${_branch}"
     }
 
     exec { "poudriere ports: ${name}":
