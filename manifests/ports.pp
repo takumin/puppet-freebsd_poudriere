@@ -15,7 +15,7 @@ define freebsd_poudriere::ports (
       $args = "-c -p ${name} -F -f none -M ${freebsd_poudriere::BASEFS}/ports/default"
 
       Exec["poudriere ports: ${name}"] {
-        require => [
+        require +> [
           freebsd_portshaker::target[$name],
         ],
       }

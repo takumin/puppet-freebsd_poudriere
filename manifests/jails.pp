@@ -34,7 +34,7 @@ define freebsd_poudriere::jails (
       $_portstree = "-p ${portstree}"
 
       Exec["poudriere jail: ${name}"] {
-        require => [
+        require +> [
           freebsd_poudriere::ports[$portstree],
         ],
       }
