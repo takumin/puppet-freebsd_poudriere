@@ -16,7 +16,7 @@ define freebsd_poudriere::ports (
 
       Exec["poudriere ports: ${name}"] {
         require => [
-          freebsd_portshaker::config[$name],
+          freebsd_portshaker::target[$name],
         ],
       }
     } else {
