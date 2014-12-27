@@ -48,7 +48,7 @@ define freebsd_poudriere::ports (
 
     if $portshaker == true {
       include freebsd_portshaker
-      Class['::freebsd_portshaker'] -> Exec["poudriere ports: ${name}"]
+      Freebsd_portshaker::Target['poudriere'] -> Freebsd_poudriere::Ports[$name]
     }
   }
 }
