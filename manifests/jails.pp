@@ -59,11 +59,7 @@ define freebsd_poudriere::jails (
     }
 
     if $portstree {
-      Exec["poudriere jail: ${name}"] {
-        require +> [
-          freebsd_poudriere::ports[$portstree],
-        ],
-      }
+      freebsd_poudriere::ports[$portstree] -> Exec["poudriere jail: ${name}"]
     }
   }
 }

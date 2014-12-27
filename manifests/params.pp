@@ -9,15 +9,11 @@ class freebsd_poudriere::params {
       $package_name               = 'ports-mgmt/poudriere'
       $package_ensure             = present
       $service_name               = 'poudriered'
-      $service_ensure             = absent
+      $service_ensure             = stopped
       $prefix                     = '/usr/local'
       $config                     = "$prefix/etc/poudriere.conf"
       $config_template            = 'freebsd_poudriere/poudriere.conf.erb'
-
-      # jail
       $jails                      = {}
-
-      # ports
       $ports                      = {}
 
       # poudriere configuration
