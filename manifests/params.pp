@@ -7,9 +7,10 @@ class freebsd_poudriere::params {
   case $::osfamily {
     'FreeBSD': {
       $package_name               = 'ports-mgmt/poudriere'
-      $package_ensure             = present
+      $package_ensure             = 'present'
       $service_name               = 'poudriered'
-      $service_ensure             = stopped
+      $service_ensure             = 'stopped'
+      $service_enable             = false
       $prefix                     = '/usr/local'
       $config                     = "$prefix/etc/poudriere.conf"
       $config_template            = 'freebsd_poudriere/poudriere.conf.erb'

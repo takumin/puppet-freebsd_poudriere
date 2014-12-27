@@ -7,7 +7,7 @@ class freebsd_poudriere::service {
 
   service { $::freebsd_poudriere::service_name:
     ensure     => $::freebsd_poudriere::service_ensure,
-    enable     => true,
+    enable     => $::freebsd_poudriere::service_enable,
     hasstatus  => true,
     hasrestart => true,
   }

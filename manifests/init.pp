@@ -12,6 +12,7 @@ class freebsd_poudriere (
   $package_ensure             = $::freebsd_poudriere::params::package_ensure,
   $service_name               = $::freebsd_poudriere::params::service_name,
   $service_ensure             = $::freebsd_poudriere::params::service_ensure,
+  $service_enable             = $::freebsd_poudriere::params::service_enable,
   $prefix                     = $::freebsd_poudriere::params::prefix,
   $config                     = $::freebsd_poudriere::params::config,
   $config_template            = $::freebsd_poudriere::params::config_template,
