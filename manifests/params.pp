@@ -12,7 +12,7 @@ class freebsd_poudriere::params {
       $service_ensure             = absent
       $prefix                     = '/usr/local'
       $config                     = "$prefix/etc/poudriere.conf"
-      $config_template            = 'reebsd_poudriere/poudriere.conf.erb'
+      $config_template            = 'freebsd_poudriere/poudriere.conf.erb'
 
       # jail
       $jails                      = {}
