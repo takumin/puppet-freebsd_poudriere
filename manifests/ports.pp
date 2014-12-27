@@ -13,6 +13,12 @@ define freebsd_poudriere::ports (
   if $ensure == present {
     if $portshaker == true {
       $args = "-c -p ${name} -F -f none -M ${freebsd_poudriere::BASEFS}/ports/default"
+
+      Exec["poudriere ports: ${name}"] {
+        require => [
+          freebsd_portshaker::config[$name],
+        ],
+      }
     } else {
       $args = "-c -p ${name} -f ${filesystem} -M ${mountpoint} -m ${method} -B ${branch}"
     }
