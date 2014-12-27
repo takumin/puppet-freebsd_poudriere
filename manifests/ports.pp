@@ -33,8 +33,12 @@ define freebsd_poudriere::ports (
     exec { "poudriere ports: ${name}":
       command => "poudriere ports ${args}",
       path    => [
-        '/usr/local/bin',
+        '/sbin',
+        '/bin',
+        '/usr/sbin',
         '/usr/bin',
+        "$freebsd_poudriere::prefix/sbin",
+        "$freebsd_poudriere::prefix/bin",
       ],
       require => [
         File[$freebsd_poudriere::config],

@@ -48,8 +48,12 @@ define freebsd_poudriere::jails (
     exec { "poudriere jail: ${name}":
       command => "poudriere jail -c -j ${name} ${args}",
       path    => [
-        '/usr/local/bin',
+        '/sbin',
+        '/bin',
+        '/usr/sbin',
         '/usr/bin',
+        "$freebsd_poudriere::prefix/sbin",
+        "$freebsd_poudriere::prefix/bin",
       ],
       require => [
         File[$freebsd_poudriere::config],
