@@ -16,6 +16,8 @@ class freebsd_poudriere::params {
       $config_template            = 'freebsd_poudriere/poudriere.conf.erb'
       $jails                      = {}
       $ports                      = {}
+      $bulks                      = {}
+      $bulks_template             = 'freebsd_poudriere/bulks.erb'
 
       # poudriere configuration
       $NO_ZFS                     = undef

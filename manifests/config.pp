@@ -102,4 +102,9 @@ class freebsd_poudriere::config {
   #
   create_resources(freebsd_poudriere::jails, $::freebsd_poudriere::jails)
 
+  #
+  # bulk list create
+  #
+  create_resources(freebsd_poudriere::bulks, $::freebsd_poudriere::bulks)
+
 }

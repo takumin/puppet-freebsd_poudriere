@@ -18,6 +18,8 @@ class freebsd_poudriere (
   $config_template            = $::freebsd_poudriere::params::config_template,
   $jails                      = $::freebsd_poudriere::params::jails,
   $ports                      = $::freebsd_poudriere::params::ports,
+  $bulks                      = $::freebsd_poudriere::params::bulks,
+  $bulks_template             = $::freebsd_poudriere::params::bulks_template,
   $NO_ZFS                     = $::freebsd_poudriere::params::NO_ZFS,
   $ZPOOL                      = $::freebsd_poudriere::params::ZPOOL,
   $ZROOTFS                    = $::freebsd_poudriere::params::ZROOTFS,
