@@ -4,7 +4,6 @@
 #
 define freebsd_poudriere::bulks (
   $ensure     = present,
-  $list       = [],
 ) {
   if $ensure == present {
     file { "$::freebsd_poudriere::prefix/etc/poudriere.d/bulk/$name":
