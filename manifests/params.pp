@@ -15,6 +15,9 @@ class freebsd_poudriere::params {
       $config_params              = {}
       $config_path                = "$prefix/etc/poudriere.conf"
       $config_template            = 'freebsd_poudriere/poudriere.conf.erb'
+      $daemon_params              = {}
+      $daemon_path                = "$prefix/etc/poudriered.conf"
+      $daemon_template            = 'freebsd_poudriere/poudriered.conf.erb'
       $jails                      = {}
       $ports                      = {}
       $bulks                      = {}

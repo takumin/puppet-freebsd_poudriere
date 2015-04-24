@@ -12,6 +12,14 @@ class freebsd_poudriere::config {
     content => template($::freebsd_poudriere::config_template),
   }
 
+  file { $::freebsd_poudriere::daemon_path:
+    ensure  => file,
+    owner   => 'root',
+    group   => 'wheel',
+    mode    => 0444,
+    content => template($::freebsd_poudriere::daemon_template),
+  }
+
   file { "$::freebsd_poudriere::prefix/etc/poudriere.d":
     ensure  => directory,
     owner   => 'root',
