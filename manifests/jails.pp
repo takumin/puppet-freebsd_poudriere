@@ -56,7 +56,7 @@ define freebsd_poudriere::jails (
         "$freebsd_poudriere::prefix/bin",
       ],
       require => [
-        File[$freebsd_poudriere::config],
+        File[$freebsd_poudriere::config_path],
       ],
       timeout => 3600,
       unless  => "poudriere jail -qln | grep -qw '^${name}'",

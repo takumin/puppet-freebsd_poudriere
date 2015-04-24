@@ -4,7 +4,7 @@
 #
 class freebsd_poudriere::config {
 
-  file { $::freebsd_poudriere::config:
+  file { $::freebsd_poudriere::config_path:
     ensure  => file,
     owner   => 'root',
     group   => 'wheel',

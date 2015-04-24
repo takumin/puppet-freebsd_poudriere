@@ -11,4 +11,5 @@ class freebsd_poudriere::service {
     hasstatus  => true,
     hasrestart => true,
   }
+
 }

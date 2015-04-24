@@ -12,7 +12,7 @@ define freebsd_poudriere::ports (
 ) {
   if $ensure == present {
     if $portshaker == true {
-      $args = "-c -p ${name} -F -f none -M ${freebsd_poudriere::BASEFS}/ports/default"
+      $args = "-c -p ${name} -F -f none -M ${freebsd_poudriere::config_params[BASEFS]}/ports/default"
     } else {
       if $filesystem {
         $_filesystem = "-f ${filesystem}"
@@ -41,7 +41,7 @@ define freebsd_poudriere::ports (
         "$freebsd_poudriere::prefix/bin",
       ],
       require => [
-        File[$freebsd_poudriere::config],
+        File[$freebsd_poudriere::config_path],
       ],
       unless  => "poudriere ports -qln | grep -qw '^${name}'",
     }
