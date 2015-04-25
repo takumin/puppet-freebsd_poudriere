@@ -14,19 +14,17 @@ class freebsd_poudriere (
   $service_ensure             = $::freebsd_poudriere::params::service_ensure,
   $service_enable             = $::freebsd_poudriere::params::service_enable,
   $prefix                     = $::freebsd_poudriere::params::prefix,
-  $config_params              = $::freebsd_poudriere::params::config_params,
+  $options                    = $::freebsd_poudriere::params::options,
   $config_path                = $::freebsd_poudriere::params::config_path,
   $config_template            = $::freebsd_poudriere::params::config_template,
-  $daemon_params              = $::freebsd_poudriere::params::daemon_params,
-  $daemon_path                = $::freebsd_poudriere::params::daemon_path,
-  $daemon_template            = $::freebsd_poudriere::params::daemon_template,
+  $daemon_options             = $::freebsd_poudriere::params::daemon_options,
+  $daemon_config_path         = $::freebsd_poudriere::params::daemon_config_path,
+  $daemon_config_template     = $::freebsd_poudriere::params::daemon_config_template,
   $jails                      = $::freebsd_poudriere::params::jails,
   $ports                      = $::freebsd_poudriere::params::ports,
   $bulks                      = $::freebsd_poudriere::params::bulks,
   $bulks_template             = $::freebsd_poudriere::params::bulks_template,
 ) inherits ::freebsd_poudriere::params {
-
-  # validate parameters here
 
   class { '::freebsd_poudriere::install': } ->
   class { '::freebsd_poudriere::config': } ~>

@@ -1,149 +1,143 @@
 # Managed Puppet
 #
-<% if defined? @NO_ZFS -%>
-NO_ZFS=<%= @NO_ZFS %>
+# <%= @options['FREEBSD_HOST'] %>
+# <%= @options['NO_ZFS'] %>
+
+<% if @options['ZPOOL'] -%>
+ZPOOL=<%= @options['ZPOOL'] %>
 <% end -%>
-<% if defined? @ZPOOL -%>
-ZPOOL=<%= @ZPOOL %>
+<% if @options['NO_ZFS'] -%>
+NO_ZFS=<%= @options['NO_ZFS'] %>
 <% end -%>
-<% if defined? @ZROOTFS -%>
-ZROOTFS=<%= @ZROOTFS %>
+<% if @options['ZROOTFS'] -%>
+ZROOTFS=<%= @options['ZROOTFS'] %>
 <% end -%>
-<% if defined? @FREEBSD_HOST -%>
-FREEBSD_HOST=<%= @FREEBSD_HOST %>
+<% if @options['FREEBSD_HOST'] -%>
+FREEBSD_HOST=<%= @options['FREEBSD_HOST'] %>
 <% end -%>
-<% if defined? @RESOLV_CONF -%>
-RESOLV_CONF=<%= @RESOLV_CONF %>
+<% if @options['RESOLV_CONF'] -%>
+RESOLV_CONF=<%= @options['RESOLV_CONF'] %>
 <% end -%>
-<% if defined? @BASEFS -%>
-BASEFS=<%= @BASEFS %>
+<% if @options['BASEFS'] -%>
+BASEFS=<%= @options['BASEFS'] %>
 <% end -%>
-<% if defined? @POUDRIERE_DATA -%>
-POUDRIERE_DATA=<%= @POUDRIERE_DATA %>
+<% if @options['POUDRIERE_DATA'] -%>
+POUDRIERE_DATA=<%= @options['POUDRIERE_DATA'] %>
 <% end -%>
-<% if defined? @USE_PORTLINT -%>
-USE_PORTLINT=<%= @USE_PORTLINT %>
+<% if @options['USE_PORTLINT'] -%>
+USE_PORTLINT=<%= @options['USE_PORTLINT'] %>
 <% end -%>
-<% if defined? @MFSSIZE -%>
-MFSSIZE=<%= @MFSSIZE %>
+<% if @options['MFSSIZE'] -%>
+MFSSIZE=<%= @options['MFSSIZE'] %>
 <% end -%>
-<% if defined? @USE_TMPFS -%>
-USE_TMPFS=<%= @USE_TMPFS %>
+<% if @options['USE_TMPFS'] -%>
+USE_TMPFS=<%= @options['USE_TMPFS'] %>
 <% end -%>
-<% if defined? @TMPFS_LIMIT -%>
-TMPFS_LIMIT=<%= @TMPFS_LIMIT %>
+<% if @options['TMPFS_LIMIT'] -%>
+TMPFS_LIMIT=<%= @options['TMPFS_LIMIT'] %>
 <% end -%>
-<% if defined? @MAX_MEMORY -%>
-MAX_MEMORY=<%= @MAX_MEMORY %>
+<% if @options['MAX_MEMORY'] -%>
+MAX_MEMORY=<%= @options['MAX_MEMORY'] %>
 <% end -%>
-<% if defined? @DISTFILES_CACHE -%>
-DISTFILES_CACHE=<%= @DISTFILES_CACHE %>
+<% if @options['DISTFILES_CACHE'] -%>
+DISTFILES_CACHE=<%= @options['DISTFILES_CACHE'] %>
 <% end -%>
-<% if defined? @CSUP_HOST -%>
-CSUP_HOST=<%= @CSUP_HOST %>
+<% if @options['CSUP_HOST'] -%>
+CSUP_HOST=<%= @options['CSUP_HOST'] %>
 <% end -%>
-<% if defined? @SVN_HOST -%>
-SVN_HOST=<%= @SVN_HOST %>
+<% if @options['SVN_HOST'] -%>
+SVN_HOST=<%= @options['SVN_HOST'] %>
 <% end -%>
-<% if defined? @CHECK_CHANGED_OPTIONS -%>
-CHECK_CHANGED_OPTIONS=<%= @CHECK_CHANGED_OPTIONS %>
+<% if @options['CHECK_CHANGED_OPTIONS'] -%>
+CHECK_CHANGED_OPTIONS=<%= @options['CHECK_CHANGED_OPTIONS'] %>
 <% end -%>
-<% if defined? @CHECK_CHANGED_DEPS -%>
-CHECK_CHANGED_DEPS=<%= @CHECK_CHANGED_DEPS %>
+<% if @options['CHECK_CHANGED_DEPS'] -%>
+CHECK_CHANGED_DEPS=<%= @options['CHECK_CHANGED_DEPS'] %>
 <% end -%>
-<% if defined? @PKG_REPO_SIGNING_KEY -%>
-PKG_REPO_SIGNING_KEY=<%= @PKG_REPO_SIGNING_KEY %>
+<% if @options['PKG_REPO_SIGNING_KEY'] -%>
+PKG_REPO_SIGNING_KEY=<%= @options['PKG_REPO_SIGNING_KEY'] %>
 <% end -%>
-<% if defined? @CCACHE_DIR -%>
-CCACHE_DIR=<%= @CCACHE_DIR %>
+<% if @options['CCACHE_DIR'] -%>
+CCACHE_DIR=<%= @options['CCACHE_DIR'] %>
 <% end -%>
-<% if defined? @PARALLEL_JOBS -%>
-PARALLEL_JOBS=<%= @PARALLEL_JOBS %>
+<% if @options['PARALLEL_JOBS'] -%>
+PARALLEL_JOBS=<%= @options['PARALLEL_JOBS'] %>
 <% end -%>
-<% if defined? @PREPARE_PARALLEL_JOBS -%>
-PREPARE_PARALLEL_JOBS=<%= @PREPARE_PARALLEL_JOBS %>
+<% if @options['PREPARE_PARALLEL_JOBS'] -%>
+PREPARE_PARALLEL_JOBS=<%= @options['PREPARE_PARALLEL_JOBS'] %>
 <% end -%>
-<% if defined? @SAVE_WRKDIR -%>
-SAVE_WRKDIR=<%= @SAVE_WRKDIR %>
+<% if @options['SAVE_WRKDIR'] -%>
+SAVE_WRKDIR=<%= @options['SAVE_WRKDIR'] %>
 <% end -%>
-<% if defined? @WRKDIR_ARCHIVE_FORMAT -%>
-WRKDIR_ARCHIVE_FORMAT=<%= @WRKDIR_ARCHIVE_FORMAT %>
+<% if @options['WRKDIR_ARCHIVE_FORMAT'] -%>
+WRKDIR_ARCHIVE_FORMAT=<%= @options['WRKDIR_ARCHIVE_FORMAT'] %>
 <% end -%>
-<% if defined? @NOLINUX -%>
-NOLINUX=<%= @NOLINUX %>
+<% if @options['NOLINUX'] -%>
+NOLINUX=<%= @options['NOLINUX'] %>
 <% end -%>
-<% if defined? @NO_FORCE_PACKAGE -%>
-NO_FORCE_PACKAGE=<%= @NO_FORCE_PACKAGE %>
+<% if @options['NO_FORCE_PACKAGE'] -%>
+NO_FORCE_PACKAGE=<%= @options['NO_FORCE_PACKAGE'] %>
 <% end -%>
-<% if defined? @NO_PACKAGE_BUILDING -%>
-NO_PACKAGE_BUILDING=<%= @NO_PACKAGE_BUILDING %>
+<% if @options['NO_PACKAGE_BUILDING'] -%>
+NO_PACKAGE_BUILDING=<%= @options['NO_PACKAGE_BUILDING'] %>
 <% end -%>
-<% if defined? @HTTP_PROXY -%>
-export HTTP_PROXY=<%= @HTTP_PROXY %>
+<% if @options['NO_RESTRICTED'] -%>
+NO_RESTRICTED=<%= @options['NO_RESTRICTED'] %>
 <% end -%>
-<% if defined? @HTTPS_PROXY -%>
-export HTTPS_PROXY=<%= @HTTPS_PROXY %>
+<% if @options['ALLOW_MAKE_JOBS'] -%>
+ALLOW_MAKE_JOBS=<%= @options['ALLOW_MAKE_JOBS'] %>
 <% end -%>
-<% if defined? @FTP_PROXY -%>
-export FTP_PROXY=<%= @FTP_PROXY %>
+<% if @options['ALLOW_MAKE_JOBS_PACKAGES'] -%>
+ALLOW_MAKE_JOBS_PACKAGES=<%= @options['ALLOW_MAKE_JOBS_PACKAGES'] %>
 <% end -%>
-<% if defined? @NO_RESTRICTED -%>
-NO_RESTRICTED=<%= @NO_RESTRICTED %>
+<% if @options['TIMESTAMP_LOGS'] -%>
+TIMESTAMP_LOGS=<%= @options['TIMESTAMP_LOGS'] %>
 <% end -%>
-<% if defined? @ALLOW_MAKE_JOBS -%>
-ALLOW_MAKE_JOBS=<%= @ALLOW_MAKE_JOBS %>
+<% if @options['URL_BASE'] -%>
+URL_BASE=<%= @options['URL_BASE'] %>
 <% end -%>
-<% if defined? @ALLOW_MAKE_JOBS_PACKAGES -%>
-ALLOW_MAKE_JOBS_PACKAGES=<%= @ALLOW_MAKE_JOBS_PACKAGES %>
+<% if @options['MAX_EXECUTION_TIME'] -%>
+MAX_EXECUTION_TIME=<%= @options['MAX_EXECUTION_TIME'] %>
 <% end -%>
-<% if defined? @TIMESTAMP_LOGS -%>
-TIMESTAMP_LOGS=<%= @TIMESTAMP_LOGS %>
+<% if @options['NOHANG_TIME'] -%>
+NOHANG_TIME=<%= @options['NOHANG_TIME'] %>
 <% end -%>
-<% if defined? @URL_BASE -%>
-URL_BASE=<%= @URL_BASE %>
+<% if @options['ATOMIC_PACKAGE_REPOSITORY'] -%>
+ATOMIC_PACKAGE_REPOSITORY=<%= @options['ATOMIC_PACKAGE_REPOSITORY'] %>
 <% end -%>
-<% if defined? @MAX_EXECUTION_TIME -%>
-MAX_EXECUTION_TIME=<%= @MAX_EXECUTION_TIME %>
+<% if @options['COMMIT_PACKAGES_ON_FAILURE'] -%>
+COMMIT_PACKAGES_ON_FAILURE=<%= @options['COMMIT_PACKAGES_ON_FAILURE'] %>
 <% end -%>
-<% if defined? @NOHANG_TIME -%>
-NOHANG_TIME=<%= @NOHANG_TIME %>
+<% if @options['KEEP_OLD_PACKAGES'] -%>
+KEEP_OLD_PACKAGES=<%= @options['KEEP_OLD_PACKAGES'] %>
 <% end -%>
-<% if defined? @ATOMIC_PACKAGE_REPOSITORY -%>
-ATOMIC_PACKAGE_REPOSITORY=<%= @ATOMIC_PACKAGE_REPOSITORY %>
+<% if @options['KEEP_OLD_PACKAGES_COUNT'] -%>
+KEEP_OLD_PACKAGES_COUNT=<%= @options['KEEP_OLD_PACKAGES_COUNT'] %>
 <% end -%>
-<% if defined? @COMMIT_PACKAGES_ON_FAILURE -%>
-COMMIT_PACKAGES_ON_FAILURE=<%= @COMMIT_PACKAGES_ON_FAILURE %>
+<% if @options['PORTTESTING_FATAL'] -%>
+PORTTESTING_FATAL=<%= @options['PORTTESTING_FATAL'] %>
 <% end -%>
-<% if defined? @KEEP_OLD_PACKAGES -%>
-KEEP_OLD_PACKAGES=<%= @KEEP_OLD_PACKAGES %>
+<% if @options['BUILDER_HOSTNAME'] -%>
+BUILDER_HOSTNAME=<%= @options['BUILDER_HOSTNAME'] %>
 <% end -%>
-<% if defined? @KEEP_OLD_PACKAGES_COUNT -%>
-KEEP_OLD_PACKAGES_COUNT=<%= @KEEP_OLD_PACKAGES_COUNT %>
+<% if @options['PRESERVE_TIMESTAMP'] -%>
+PRESERVE_TIMESTAMP=<%= @options['PRESERVE_TIMESTAMP'] %>
 <% end -%>
-<% if defined? @PORTTESTING_FATAL -%>
-PORTTESTING_FATAL=<%= @PORTTESTING_FATAL %>
+<% if @options['BUILD_AS_NON_ROOT'] -%>
+BUILD_AS_NON_ROOT=<%= @options['BUILD_AS_NON_ROOT'] %>
 <% end -%>
-<% if defined? @BUILDER_HOSTNAME -%>
-BUILDER_HOSTNAME=<%= @BUILDER_HOSTNAME %>
+<% if @options['PRIORITY_BOOST'] -%>
+PRIORITY_BOOST=<%= @options['PRIORITY_BOOST'] %>
 <% end -%>
-<% if defined? @PRESERVE_TIMESTAMP -%>
-PRESERVE_TIMESTAMP=<%= @PRESERVE_TIMESTAMP %>
+<% if @options['BUILDNAME_FORMAT'] -%>
+BUILDNAME_FORMAT=<%= @options['BUILDNAME_FORMAT'] %>
 <% end -%>
-<% if defined? @BUILD_AS_NON_ROOT -%>
-BUILD_AS_NON_ROOT=<%= @BUILD_AS_NON_ROOT %>
+<% if @options['DURATION_FORMAT'] -%>
+DURATION_FORMAT=<%= @options['DURATION_FORMAT'] %>
 <% end -%>
-<% if defined? @PRIORITY_BOOST -%>
-PRIORITY_BOOST=<%= @PRIORITY_BOOST %>
+<% if @options['USE_COLORS'] -%>
+USE_COLORS=<%= @options['USE_COLORS'] %>
 <% end -%>
-<% if defined? @BUILDNAME_FORMAT -%>
-BUILDNAME_FORMAT=<%= @BUILDNAME_FORMAT %>
-<% end -%>
-<% if defined? @DURATION_FORMAT -%>
-DURATION_FORMAT=<%= @DURATION_FORMAT %>
-<% end -%>
-<% if defined? @USE_COLORS -%>
-USE_COLORS=<%= @USE_COLORS %>
-<% end -%>
-<% if defined? @TRIM_ORPHANED_BUILD_DEPS -%>
-TRIM_ORPHANED_BUILD_DEPS=<%= @TRIM_ORPHANED_BUILD_DEPS %>
+<% if @options['TRIM_ORPHANED_BUILD_DEPS'] -%>
+TRIM_ORPHANED_BUILD_DEPS=<%= @options['TRIM_ORPHANED_BUILD_DEPS'] %>
 <% end -%>

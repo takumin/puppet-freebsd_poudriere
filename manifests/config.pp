@@ -12,12 +12,12 @@ class freebsd_poudriere::config {
     content => template($::freebsd_poudriere::config_template),
   }
 
-  file { $::freebsd_poudriere::daemon_path:
+  file { $::freebsd_poudriere::daemon_config_path:
     ensure  => file,
     owner   => 'root',
     group   => 'wheel',
     mode    => 0444,
-    content => template($::freebsd_poudriere::daemon_template),
+    content => template($::freebsd_poudriere::daemon_config_template),
   }
 
   file { "$::freebsd_poudriere::prefix/etc/poudriere.d":
@@ -113,6 +113,6 @@ class freebsd_poudriere::config {
   #
   # bulk list create
   #
-  create_resources(freebsd_poudriere::bulks, $::freebsd_poudriere::bulks)
+  #create_resources(freebsd_poudriere::bulks, $::freebsd_poudriere::bulks)
 
 }
