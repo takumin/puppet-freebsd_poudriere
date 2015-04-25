@@ -4,16 +4,17 @@
 #
 define freebsd_poudriere::bulks (
   $ensure     = present,
+  $lists      = [],
 ) {
   if $ensure == present {
-    file { "$::freebsd_poudriere::prefix/etc/poudriere.d/bulk/$name":
+    file { "${::freebsd_poudriere::prefix}/etc/poudriere.d/bulk/${name}":
       ensure  => file,
       owner   => 'root',
       group   => 'wheel',
       mode    => 0444,
       content => template($::freebsd_poudriere::bulks_template),
       require => [
-        File["$::freebsd_poudriere::prefix/etc/poudriere.d/bulk"],
+        File["${::freebsd_poudriere::prefix}/etc/poudriere.d/bulk"],
       ],
     }
   }

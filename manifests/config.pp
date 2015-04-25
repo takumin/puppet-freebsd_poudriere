@@ -113,6 +113,6 @@ class freebsd_poudriere::config {
   #
   # bulk list create
   #
-  #create_resources(freebsd_poudriere::bulks, $::freebsd_poudriere::bulks)
+  create_resources(freebsd_poudriere::bulks, $::freebsd_poudriere::bulks)
 
 }
